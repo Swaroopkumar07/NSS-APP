@@ -1,0 +1,86 @@
+import { StyleSheet, Text, View,TextInput,KeyboardAvoidingView,Image } from 'react-native'
+import React from 'react'
+import { useNavigation } from '@react-navigation/native';
+
+export default function Verification() {
+  const navigation = useNavigation()
+  return (
+   <>
+   
+   <View style={{backgroundColor:"#404040",height:"42%",}}>
+            <View style={{ justifyContent: 'space-around', flexDirection: 'row' ,marginTop:10}}>
+          <Image style={{ width: 40, height: 40, alignSelf: 'center',  }} source={require('./gayatri.jpg')} />
+          <Text style={{ color: '#ffffff', fontSize: 25, alignSelf: 'center', textAlign: 'center', fontWeight: 'bold' }}>GVPCOE(A)</Text>
+          <Image style={{ width: 40,height:40, alignSelf: 'center',  }} source={require('./CFSR.jpg')} />
+        </View>
+        <Text style={{ color: '#ffffff', fontSize: 25, alignSelf: 'center', textAlign: 'center', fontWeight: 'bold',}} onPress={() => {Linking.openURL('http://www.gvpcenss.org')}}>NSS</Text>
+        <Text style={{ color: '#ffffff', fontSize: 25, alignSelf: 'center', textAlign: 'center', fontWeight: 'bold',  }} onPress={() => {Linking.openURL('http://www.gvpcenss.org')}}   >National Service Scheme</Text>
+        <Image style={{width:100,height:100,alignSelf:'center',marginTop:10,}} source={require('./icon1.png')}  />
+        </View>
+            <View style={{flex:1,backgroundColor:'#ffffff'}}>
+            <KeyboardAvoidingView>
+            <View style={{ marginTop: 60 }}>
+          <Text style={{ color: '#000000', fontSize: 20, fontWeight: 'bold', width: '90%', justifyContent: 'space-between', alignSelf: 'center' }}>Email</Text>
+          <TextInput style={styles.Input} />
+          </View>
+          <View>
+          <Text style={{color: '#000000', fontSize: 20, fontWeight: 'bold', width: '90%', justifyContent: 'space-between', alignSelf: 'center',marginTop:40}}> Verify OTP</Text>
+                        <View style={{flexDirection:'row',marginTop:20,alignSelf:'center',width:'90%'}} >
+                            <TextInput style={styles.input1 }  keyboardType='number-pad'></TextInput>
+                            <TextInput style={styles.input1 }  keyboardType='number-pad'></TextInput>
+                             <TextInput style={styles.input1 }  keyboardType='number-pad'></TextInput>
+                             <TextInput style={styles.input1 }  keyboardType='number-pad'></TextInput>
+                        </View>
+                        </View>
+                        
+          </KeyboardAvoidingView>
+          <Text style={styles.Button} onPress={()=>navigation.navigate('Password')}>Verify OTP</Text>
+            </View>
+   </>
+  )
+}
+
+const styles = StyleSheet.create({
+  Container: {
+    // flex: 0.7,
+    backgroundColor: '#404040',
+    justifyContent: 'center',
+    height:'47%'
+
+  },
+  Input: {
+    borderWidth: 2,
+    width: '90%',
+    marginLeft: 20,
+    borderRadius: 10,
+    borderColor: '#ffffff',
+    borderBottomColor: '#404040',
+    paddingLeft: 30,
+    color:'#000000',
+      fontSize:20
+  },
+  input1: {
+    borderRadius: 6,
+    borderColor: '#404040',
+    borderWidth: 3,
+    width: 45,
+    height: 45,
+    marginLeft: 30,
+    paddingLeft: 5,
+    
+
+},
+Button: {
+  color: '#ffffff',
+  width: '40%',
+  fontWeight: '500',
+  fontSize: 17,
+  alignSelf: 'center',
+  backgroundColor: '#404040',
+  textAlign: 'center',
+  borderRadius: 50,
+  marginTop: 30,
+  padding: 10
+}
+    
+})
